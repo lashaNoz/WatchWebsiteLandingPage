@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap");
+
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.landing-page {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #333, #000);
+  isolation: isolate;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 20rem;
+  margin: 2rem 0 0 4rem;
+}
+
+.logo img {
+  width: 10rem;
+}
+
+.navigation {
+  width: 40rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation a {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 200;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.navigation a::before {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 0.1rem;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.navigation a:hover::before {
+  transform: scaleX(1);
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  margin-right: 4rem;
+  position: relative;
+}
+
+.search-input {
+  width: 20rem;
+  height: 3.5rem;
+  padding-left: 3.5rem;
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  background-color: aliceblue;
+  border: none;
+  outline: none;
+  border-radius: 5rem;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+.change .search-input {
+  transform: scaleX(1);
+}
+
+.searchbar i {
+  color: #fff;
+  font-size: 2.5em;
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.change.searchbar i {
+  color: #555;
+  right: 17rem;
+  pointer-events: none;
+}
+
+.header {
+  display: grid;
+  place-items: center;
+  margin: 5rem 0;
+}
+
+.header button {
+  width: 12rem;
+  height: 3rem;
+  background-color: aliceblue;
+  border: none;
+  border-radius: 0.4rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 7rem;
+  color: aliceblue;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-size: 1.8rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.slides {
+  width: 90rem;
+  height: 90rem;
+  position: absolute;
+  top: 30%;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: rotateZ(45deg);
+  position: absolute;
+  transition: opacity 1s;
+}
+
+.controls {
+  position: absolute;
+  z-index: 10;
+  top: 20rem;
+  right: -3rem;
+}
+
+.controls a {
+  font-size: 2rem;
+  color: #fff;
+  background-color: #444;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0.4rem;
+  display: block;
+  transition: background-color 1s;
+}
+
+/* responsive */
+@media (max-width: 1050px) {
+  .navigation {
+    width: 30rem;
+  }
+
+  .slides {
+    width: 70rem;
+    height: 70rem;
+  }
+}
+
+@media (max-width: 880px) {
+  .navbar {
+    height: 25rem;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: fit-content;
+    margin: 2rem 0 0 0;
+  }
+
+  .searchbar {
+    margin-right: 0;
+  }
+
+  .header p {
+    display: none;
+  }
+
+  .slides {
+    top: 45%;
+    width: 60rem;
+    height: 60rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .logo {
+    margin: 1rem 0 0 0;
+  }
+
+  .logo img {
+    width: 8rem;
+  }
+
+  .header h1 {
+    font-size: 5rem;
+  }
+
+  .slides {
+    top: 50%;
+    width: 55rem;
+    height: 55rem;
+  }
+
+  .controls {
+    right: 1rem;
+  }
+
+  .controls a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar {
+    height: 20rem;
+  }
+
+  .header {
+    margin: 3rem 0;
+  }
+
+  .header h1 {
+    font-size: 4rem;
+  }
+
+  .slides {
+    width: 42rem;
+    height: 42rem;
+  }
+
+  .controls {
+    right: 4rem;
+  }
+
+  .controls a {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 365px) {
+  html {
+    font-size: 45%;
+  }
+}
